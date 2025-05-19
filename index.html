@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birdemic: Exploring Trends in Bird Flu Outbreaks Across the U.S.</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+<body>
+    <div class="page-title">
+        <h1 class="page-title">Birdemic: Exploring Trends in Bird Flu Outbreaks Across the U.S.</h1>
+    </div>
+    <div class="container"> <!-- Centers content and sets max width -->
+        <div class="map-wrapper">
+            <div id="vis"></div>
+            <button id="reset-view" style="display:none;">Reset to National View</button>
+            <div id="legend"></div>
+        </div>
+        <div id="tooltip"></div>
+    </div>
+    <div>
+        <p class="description-box">The heatmap visualization above focuses primarily on exploring the trends of bird flu
+            in waterfowl
+            across the United States at both the state and county levels from 2021 to 2025. The heatmap shows the number
+            of detections
+            of bird flu found in each state and or county. When first loaded, the headmap shows only the bird flu
+            detections at a
+            state level. When the user clicks on a state, the visualization changes to show a heat map of the state at
+            the county
+            level. The range of the legend changes depending on what state is selected. If the user wishes to go back to
+            the original
+            map, they simply need to click the button “Reset to national view”, which is only present when in county
+            view.
+        </p>
+    </div>
+
+    <!-- NEW: Bird Line Graph Section -->
+    <div class="line-chart-wrapper">
+        <h2>Bird Flu Detections Over Time</h2>
+        <label for="birdDropdown"><strong>Select a Bird Species:</strong></label>
+        <select id="birdDropdown"></select>
+        <div id="line-chart"></div>
+    </div>
+
+    <div>
+        <p class= "line-graph-description">
+            This interactive line graph visualizes the spread of bird flu among various bird species from 2022 to 2025. 
+            By default, the graph displays data for all recorded species, with each bird represented by a different colored 
+            line to help differentiate them. Users can use the dropdown menu at the top to filter the graph by a specific 
+            bird species, which dynamically adjusts the graph’s scale to highlight the selected bird’s trend over time in a 
+            better manner. This allows for clearer insight into how bird flu cases have changed for individual species across 
+            the years. Additionally, the graph includes tooltips so that when you hover over a data point, a small popup 
+            appears showing the species name, the year, and the number of bird flu cases for that specific data point. This 
+            feature makes it easy to explore and compare detailed case numbers for each bird species interactively.
+        </p>
+    </div>
+
+    <!-- Load D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

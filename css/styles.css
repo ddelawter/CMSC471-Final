@@ -1,0 +1,242 @@
+/* Base Reset & Typography */
+* {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Page Container */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+
+/* Map Wrapper */
+.map-wrapper {
+    width: 100%;
+    position: relative;
+    padding-bottom: 30px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+/* Map SVG Display */
+#vis svg {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+}
+
+
+/* State Styles (Default Map) */
+.state {
+    stroke: #666;
+    stroke-width: 0.6;
+    cursor: pointer;
+}
+
+
+.state:hover {
+    stroke: #000;
+    stroke-width: 1;
+}
+
+
+/* County Styles (Zoomed View) */
+.county {
+    stroke: #444;
+    stroke-width: 0.5;
+    cursor: default;
+}
+
+
+/* Borders */
+.state-border {
+    fill: none;
+    stroke: #222;
+    stroke-width: 1.2;
+    pointer-events: none;
+}
+
+
+.national-border {
+    fill: none;
+    stroke: #222;
+    stroke-width: 0.8;
+    pointer-events: none;
+}
+
+
+/* Axes (if needed in charts) */
+.x-axis path,
+.y-axis path,
+.x-axis line,
+.y-axis line {
+    stroke: #333;
+    shape-rendering: crispEdges;
+}
+
+
+.x-axis text,
+.y-axis text {
+    font-size: 12px;
+}
+
+
+/* Tooltip */
+#tooltip {
+    position: absolute;
+    display: none;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    pointer-events: none;
+    font-size: 13px;
+    color: #222;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 250px;
+    line-height: 1.6;
+    white-space: normal;
+}
+
+
+/* Legend Styling */
+#legend {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: sans-serif;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+    min-width: 250px;
+}
+
+
+.legend-label {
+    font-size: 11px;
+    margin-top: 4px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Optional: Responsive Tweaks */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+
+    #legend {
+        right: 5px;
+        bottom: 5px;
+        font-size: 11px;
+    }
+
+
+    #tooltip {
+        font-size: 11px;
+    }
+}
+
+.description-box {
+  text-indent: 30px;
+  border: 1px solid #000000;      /* Light gray border */
+  border-radius: 8px;          /* Rounded corners */
+  padding: 16px;               /* Space inside the box */
+  margin-top: 20px;            /* Space above the box */
+  background-color: #c6daf1;   /* Light background */
+  font-family: 'Georgia', serif; /* Font change */
+  font-size: 16px;             /* Optional: Adjust font size */
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1 1rem;  
+  color: #000000;         /* Improves readability */
+}
+
+
+.page-title {
+  max-width: 1300px;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  margin: 2rem auto;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  font-family: 'Georgia', serif; /* or pick your preferred font */
+  color: #000000; /* optional: a dark gray-blue */
+}
+
+.line-chart-wrapper {
+  max-width: 960px;
+  max-height: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#line-chart svg {
+  width: 100%;
+  height: auto;
+}
+
+#reset-view {
+  display: inline-block;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: white;
+  color: darkblue;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#reset-view:hover {
+  background-color: lightskyblue;
+  transform: translateY(-1px);
+}
+
+#reset-view:active {
+  background-color: #002f99;
+  transform: translateY(0);
+}
+
+.line-graph-description {
+  text-indent: 30px;
+  border: 1px solid #000000;      /* Light gray border */
+  border-radius: 8px;          /* Rounded corners */
+  padding: 16px;               /* Space inside the box */
+  margin-top: 20px;            /* Space above the box */
+  background-color: #c6daf1;   /* Light background */
+  font-family: 'Georgia', serif; /* Font change */
+  font-size: 16px;             /* Optional: Adjust font size */
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1 1rem;  
+  color: #000000;         /* Improves readability */
+}
